@@ -15,37 +15,38 @@
 int main(){
 
    
-    int tabuleiro[10][10];
+    int tabuleiro[10][10] = {0};//matriz tabuleiro
     
-    char NUM_colunas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-    int NUM_linhas = 0;
-    int linha = 0;
+    char NUM_colunas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};//numero das colunas
+    int NUM_linhas = 0; //nomeando as linhas
+    int linha = 0; //declarando o numero de quantas linhas vão ter no tabuleiro
     
     
-    
+    //definindo iniciais/locais do tabuleiro
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
         {
             tabuleiro[i][j] = 0;
         }
-        
     }
     
     
-    printf("\n\n");
+            printf("\n\n");
     
-    
+    //declarando inicial de cada navio
+    //navio 1
     tabuleiro[8][8] = 3;
     tabuleiro[8][7] = 3;
     tabuleiro[8][6] = 3;
 
+    //navio 2
     tabuleiro[1][3] = 3;
     tabuleiro[2][3] = 3;
     tabuleiro[3][3] = 3;
     
 
-
+    //nomeando as colunas
     printf("      ");//espaço que define a letra da coluna
     for (int i = 0; i <= 10; i++)
     {
@@ -57,15 +58,15 @@ int main(){
 
 
     
-    while (linha < 10)
+    while (linha < 10)//até quando vai ser executado
     {
         printf("%2d|   ", NUM_linhas++);//define o numero da linha
             for (int coluna = 0; coluna < 10; coluna++)
             {
-                printf("%d ", tabuleiro[linha][coluna]);
+                printf("%d ", tabuleiro[linha][coluna]);//exibição do tabuleiro
             }
-        linha++;
-        printf("\n");        
+        linha++;//impedir um loop infinito
+        printf("\n");//pular pra próxima linha  
     }
     
 
